@@ -33,7 +33,6 @@ body {
 
 .pesquisar {
     display: flex;
-    align-items: center;
     width: 90%;
 
 }
@@ -59,22 +58,16 @@ body {
 .tarefas {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 20px;
-    width: 100%;
 }
 
 .task {
     display: flex;
-    width: 100%;
-    height: auto;
-
 }
 
 .textbox {
     background-color: white;
     max-height: 90px;
-    height: auto;
     width: 90%;
     padding: 10px 10px 10px 10px;
     align-items: center;
@@ -94,7 +87,6 @@ body {
 .NewTask {
     display: flex;
     align-items: flex-start;
-    height: 100%;
 }
 
 .check {
