@@ -24,17 +24,13 @@ function myFunction() {
         const { icon: apagar } = createIcon(divImg, 'apague', 'icons/bin.png', 'delete')
         document.getElementById('name').value = '';
         check.onclick = function () {
-            if (task.style.textDecoration === 'none') {
-                task.style.textDecoration = 'line-through'
-            } else {
-                task.style.textDecoration = 'none'
-            }
+            textbox.classList.toggle('taskCompleted')
         }
         apagar.onclick = function () {
             task.remove()
         }
     } else {
-        console.log("Insira uma tarefa")
+        alert("Insira uma tarefa")
     }
     cont++
 }
