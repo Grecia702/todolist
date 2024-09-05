@@ -1,5 +1,3 @@
-let cont = 0;
-
 function myFunction() {
     let x = document.getElementById('name').value
     if (x != '') {
@@ -18,10 +16,12 @@ function myFunction() {
         let divImg = document.createElement("div")
         task.appendChild(divImg)
 
+        console.log(task)
+
         divImg.classList.add("NewTask")
 
-        const { icon: check } = createIcon(divImg, 'check', 'icons/check-mark.png', 'check');
-        const { icon: apagar } = createIcon(divImg, 'apague', 'icons/bin.png', 'delete')
+        const { icon: check } = createIcon(divImg, 'icons/check-mark.png', 'check');
+        const { icon: apagar } = createIcon(divImg, 'icons/bin.png', 'delete')
         document.getElementById('name').value = '';
         check.onclick = function () {
             textbox.classList.toggle('taskCompleted')
@@ -32,13 +32,11 @@ function myFunction() {
     } else {
         alert("Insira uma tarefa")
     }
-    cont++
 }
-function createIcon(div, icon, source, type) {
+function createIcon(div, source, type) {
     icon = document.createElement('img')
     icon.src = source
     icon.className = type
-    div.id = cont;
     div.appendChild(icon)
     return {
         icon,
