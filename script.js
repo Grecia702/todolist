@@ -1,4 +1,4 @@
-function myFunction() {
+function criarTarefa() {
     let x = document.getElementById('name').value
     if (x != '') {
 
