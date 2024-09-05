@@ -15,9 +15,6 @@ function myFunction() {
 
         let divImg = document.createElement("div")
         task.appendChild(divImg)
-
-        console.log(task)
-
         divImg.classList.add("NewTask")
 
         const { icon: check } = createIcon(divImg, 'icons/check-mark.png', 'check');
