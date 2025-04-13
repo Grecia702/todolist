@@ -17,7 +17,9 @@ function criarTarefa() {
         checked: false
     })
     localStorage.setItem(localStoragekey, JSON.stringify(values))
+    document.getElementById('name').value = '';
     loadTasks();
+
 }
 
 function loadTasks() {
@@ -59,7 +61,7 @@ function loadTasks() {
             let values = JSON.parse(localStorage.getItem(localStoragekey) || "[]")
             checar = values.find(task => task.id === i)
             checar.checked = !checar.checked
-            alvo.classList.toggle('taskCompleted', alvo.checked)
+            alvo.classList.toggle('taskCompleted', completeTask.checked)
             localStorage.setItem(localStoragekey, JSON.stringify(values));
         });
     }
