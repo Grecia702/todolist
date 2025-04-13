@@ -19,6 +19,7 @@ body {
     width: 500px;
     height: 600px;
     border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.678);
     padding: 50px 30px 50px 30px;
     overflow: auto;
     display: flex;
@@ -63,10 +64,13 @@ body {
 
 .task {
     display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .textbox {
-    background-color: white;
+    /* background-color: rgb(110, 185, 235); */
+    border-radius: 5px;
     max-height: 90px;
     width: 90%;
     padding: 10px 10px 10px 10px;
@@ -77,40 +81,69 @@ body {
     transition: background-color 0.5s;
 }
 
-.tarefas button {
-    height: 40px;
-    width: 40px;
-    border: none;
-    background-color: rgb(212, 212, 212);
-}
-
-.NewTask {
+.DeleteTask {
     display: flex;
     align-items: flex-start;
 }
 
-.check {
-    background-color: rgb(159, 224, 159);
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border: 0.2rem solid rgb(92, 92, 92);
+    border-radius: 10rem;
 }
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 1.4rem;
+    height: 1.4rem;
+    background: rgb(232, 241, 232);
+    clip-path: polygon(20% 45%,
+            35% 60%,
+            50% 75%,
+            65% 60%,
+            80% 45%,
+            75% 40%,
+            50% 65%,
+            25% 40%);
+
+
+    transform: scale(0);
+    background-color: rgb(216, 216, 216);
+}
+
+input[type="checkbox"]:checked {
+    text-decoration: line-through;
+    background: rgb(92, 92, 92);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1)
+}
+
+
 
 .delete {
     background-color: rgb(245, 149, 149);
-}
-
-
-img {
-    width: 50px;
+    border-radius: 5px;
+    width: 40px;
 }
 
 .taskCompleted {
-    background-color: rgba(179, 179, 179, 0.747);
+    /* background-color: rgba(122, 122, 122, 0.747); */
     text-decoration: line-through;
 }
+
 
 button:hover,
 img:hover {
     cursor: pointer;
 }
+
 
 ::-webkit-scrollbar {
     width: 5px;
